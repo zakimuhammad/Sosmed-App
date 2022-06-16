@@ -4,11 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.zaki.sosmedapp.databinding.ItemPostBinding
+import com.zaki.sosmedapp.helper.OnItemClick
 import com.zaki.sosmedapp.network.model.Post
 
 class PostAdapter: RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
 
     private val posts: MutableList<Post> = mutableListOf()
+    lateinit var onItemClick: OnItemClick<Post>
 
     fun setPosts(posts: List<Post>) {
         this.posts.clear()
@@ -35,6 +37,10 @@ class PostAdapter: RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
             tvPostDesc.text = post.body
             tvUserName.text = post.user.name
             tvCompanyAme.text = post.user.company.name
+
+            itemView.setOnClickListener {
+                onItemClick.onItemClick(post)
+            }
         }
     }
 }

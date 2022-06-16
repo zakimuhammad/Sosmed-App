@@ -12,7 +12,11 @@
         tools:layout="@layout/fragment_posts" >
         <action
             android:id="@+id/action_postsFragment_to_detailPostFragment"
-            app:destination="@id/detailPostFragment" />
+            app:destination="@id/detailPostFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
     </fragment>
     <fragment
         android:id="@+id/detailPostFragment"
@@ -21,7 +25,15 @@
         tools:layout="@layout/fragment_detail_post" >
         <action
             android:id="@+id/action_detailPostFragment_to_userFragment"
-            app:destination="@id/userFragment" />
+            app:destination="@id/userFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+        <argument
+            android:name="post"
+            app:argType="com.zaki.sosmedapp.network.model.Post"
+            app:nullable="true"/>
     </fragment>
     <fragment
         android:id="@+id/userFragment"
@@ -30,7 +42,11 @@
         tools:layout="@layout/fragment_user" >
         <action
             android:id="@+id/action_userFragment_to_photoFragment"
-            app:destination="@id/photoFragment" />
+            app:destination="@id/photoFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
     </fragment>
     <fragment
         android:id="@+id/photoFragment"
