@@ -8,9 +8,10 @@
         android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_users"
+            android:id="@+id/rv_posts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             tools:listitem="@layout/item_post"/>
 
     </LinearLayout>
