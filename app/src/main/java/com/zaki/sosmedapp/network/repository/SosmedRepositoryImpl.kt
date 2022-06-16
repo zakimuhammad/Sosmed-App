@@ -1,6 +1,7 @@
 package com.zaki.sosmedapp.network.repository
 
 import com.zaki.sosmedapp.network.api.SosmedApi
+import com.zaki.sosmedapp.network.model.Comment
 import com.zaki.sosmedapp.network.model.Post
 import com.zaki.sosmedapp.network.model.User
 import retrofit2.Retrofit
@@ -25,6 +26,16 @@ class SosmedRepositoryImpl @Inject constructor(
 
     override suspend fun getPosts(): List<Post> {
         val  response = api.getPosts().awaitResponse()
+
+        return if (response.isSuccessful) {
+            response.body() ?: listOf()
+        } else {
+            listOf()
+        }
+    }
+
+    override suspend fun getComments(postId: String): List<Comment> {
+        val response = api.getComments(postId).awaitResponse()
 
         return if (response.isSuccessful) {
             response.body() ?: listOf()
