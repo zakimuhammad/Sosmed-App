@@ -1,7 +1,8 @@
-package com.zaki.sosmedapp
+package com.zaki.sosmedapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.zaki.sosmedapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
