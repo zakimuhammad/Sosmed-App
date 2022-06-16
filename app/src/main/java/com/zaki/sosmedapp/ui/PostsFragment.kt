@@ -39,6 +39,11 @@ class PostsFragment : Fragment() {
         initVMObserver()
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     private fun initAdapter() {
         postAdapter = PostAdapter()
         binding.rvPosts.apply {
