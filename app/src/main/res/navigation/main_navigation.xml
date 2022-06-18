@@ -47,6 +47,10 @@
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@android:anim/fade_in"
             app:popExitAnim="@android:anim/fade_out"/>
+        <argument
+            android:name="user"
+            app:argType="com.zaki.sosmedapp.network.model.User"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/photoFragment"

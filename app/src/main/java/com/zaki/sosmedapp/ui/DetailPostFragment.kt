@@ -7,9 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zaki.sosmedapp.databinding.FragmentDetailPostBinding
+import com.zaki.sosmedapp.helper.OnItemClick
+import com.zaki.sosmedapp.network.model.Comment
 import com.zaki.sosmedapp.viewmodel.DetailPostViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -38,6 +41,7 @@ class DetailPostFragment : Fragment() {
         initAdapter()
         initArguments()
         initVMObserver()
+        initClickListener()
     }
 
     override fun onDestroyView() {
@@ -50,7 +54,7 @@ class DetailPostFragment : Fragment() {
         val post = args.post
         if (post != null) {
             binding.tvTitle.text = post.title
-            binding.tvUserName.text = "by ${post.user.name}"
+            binding.tvUserName.text = "by ${post.user.username}"
             binding.tvDescription.text = post.body
 
             viewModel.getComments(post.id.toString())
@@ -68,6 +72,13 @@ class DetailPostFragment : Fragment() {
     private fun initVMObserver() {
         viewModel.comment.observe(viewLifecycleOwner) {
             commentAdapter.setComments(it)
+        }
+    }
+
+    private fun initClickListener() {
+        binding.tvUserName.setOnClickListener {
+            val action = DetailPostFragmentDirections.actionDetailPostFragmentToUserFragment(args.post?.user)
+            findNavController().navigate(action)
         }
     }
 }

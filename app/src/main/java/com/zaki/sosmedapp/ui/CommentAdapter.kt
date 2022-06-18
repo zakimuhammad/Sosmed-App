@@ -3,7 +3,6 @@ package com.zaki.sosmedapp.ui
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.zaki.sosmedapp.databinding.ItemCommentBinding
 import com.zaki.sosmedapp.network.model.Comment

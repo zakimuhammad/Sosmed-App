@@ -1,8 +1,6 @@
 package com.zaki.sosmedapp.network.api
 
-import com.zaki.sosmedapp.network.model.Comment
-import com.zaki.sosmedapp.network.model.Post
-import com.zaki.sosmedapp.network.model.User
+import com.zaki.sosmedapp.network.model.*
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -17,4 +15,10 @@ interface SosmedApi {
 
     @GET("posts/{idPost}/comments")
     fun getComments(@Path("idPost") idPost: String): Call<List<Comment>>
+
+    @GET("users/{userId}/albums")
+    fun getAlbums(@Path("userId") userId: Int): Call<List<Album>>
+
+    @GET("albums/{albumId}/photos")
+    fun getPhotos(@Path("albumId") albumId: Int): Call<List<Photo>>
 }

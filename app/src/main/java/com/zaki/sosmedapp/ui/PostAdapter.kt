@@ -35,7 +35,7 @@ class PostAdapter: RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
         fun bind(post: Post) = with(binding) {
             tvPostTitle.text = post.title
             tvPostDesc.text = post.body
-            tvUserName.text = post.user.name
+            tvUserName.text = post.user.username
             tvCompanyAme.text = post.user.company.name
 
             itemView.setOnClickListener {
