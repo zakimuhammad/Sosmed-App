@@ -9,7 +9,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.zaki.sosmedapp.R
 import com.zaki.sosmedapp.databinding.FragmentUserBinding
 import com.zaki.sosmedapp.helper.OnItemClick
 import com.zaki.sosmedapp.network.model.Photo
@@ -63,7 +62,8 @@ class UserFragment : Fragment() {
         }
         albumAdapter.onItemClick = object : OnItemClick<Photo> {
             override fun onItemClick(data: Photo) {
-                findNavController().navigate(R.id.action_userFragment_to_photoFragment)
+                val action = UserFragmentDirections.actionUserFragmentToPhotoFragment(data)
+                findNavController().navigate(action)
             }
         }
     }
