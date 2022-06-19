@@ -5,5 +5,5 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Company(
-    val name: String
+    val name: String = ""
 ): Parcelable
