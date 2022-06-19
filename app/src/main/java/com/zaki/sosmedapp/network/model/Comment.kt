@@ -1,9 +1,9 @@
 package com.zaki.sosmedapp.network.model
 
 data class Comment(
-    val postId: Int,
-    val id: Int,
-    val name: String,
-    val email: String,
-    val body: String
+    val postId: Int = 0,
+    val id: Int = 0,
+    val name: String = "",
+    val email: String = "",
+    val body: String = ""
 )
