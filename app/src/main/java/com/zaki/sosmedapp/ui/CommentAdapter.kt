@@ -33,7 +33,7 @@ class CommentAdapter: RecyclerView.Adapter<CommentAdapter.CommentViewHolder>() {
     inner class CommentViewHolder(private val binding: ItemCommentBinding): RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
         fun bind(comment: Comment) = with(binding) {
-            tvUserName.text = "by ${comment.name}"
+            tvUserNameComment.text = "by ${comment.name}"
             tvComment.text = comment.body
         }
     }
