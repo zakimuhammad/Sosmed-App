@@ -6,11 +6,27 @@ import javax.inject.Inject
 
 class FakeSosmedRepositoryImpl @Inject constructor(): SosmedRepository {
     override suspend fun getUsers(): List<User> {
-        TODO("Not yet implemented")
+        return listOf(
+            User(
+                id = 1,
+                username = "Budi Santoso"
+            )
+        )
     }
 
     override suspend fun getPosts(): List<Post> {
-        TODO("Not yet implemented")
+        return listOf(
+            Post(
+                userId = 1,
+                id = 1,
+                title = "Tutorial Android Dev"
+            ),
+            Post(
+                userId = 1,
+                id = 2,
+                title = "Tutorial Web Dev"
+            ),
+        )
     }
 
     override suspend fun getComments(postId: String): List<Comment> {

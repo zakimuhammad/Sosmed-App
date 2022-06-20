@@ -8,17 +8,11 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.filters.MediumTest
 import com.zaki.sosmedapp.R
 import com.zaki.sosmedapp.di.RepositoryModule
-import com.zaki.sosmedapp.fakerepo.FakeSosmedRepositoryImpl
 import com.zaki.sosmedapp.helper.RecyclerViewItemCountAssertion
 import com.zaki.sosmedapp.helper.RecyclerViewMatcherUtils.atPosition
 import com.zaki.sosmedapp.launchFragmentInHiltContainer
 import com.zaki.sosmedapp.network.model.Post
 import com.zaki.sosmedapp.network.model.User
-import com.zaki.sosmedapp.network.repository.SosmedRepository
-import dagger.Binds
-import dagger.Module
-import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import dagger.hilt.android.testing.UninstallModules
@@ -38,13 +32,6 @@ class DetailPostFragmentTest {
 
     @get:Rule
     var hiltRule = HiltAndroidRule(this)
-
-    @Module
-    @InstallIn(ViewModelComponent::class)
-    abstract class FakeRepositoryModule {
-        @Binds
-        abstract fun provideSosmedRepository(sosmedRepositoryImpl: FakeSosmedRepositoryImpl): SosmedRepository
-    }
 
     private val post = Post(
         userId = 1,
