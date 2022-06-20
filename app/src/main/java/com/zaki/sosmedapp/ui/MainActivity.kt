@@ -1,7 +1,7 @@
 package com.zaki.sosmedapp.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.zaki.sosmedapp.R
 import dagger.hilt.android.AndroidEntryPoint
 

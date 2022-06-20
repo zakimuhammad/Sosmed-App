@@ -11,8 +11,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zaki.sosmedapp.databinding.FragmentDetailPostBinding
-import com.zaki.sosmedapp.helper.OnItemClick
-import com.zaki.sosmedapp.network.model.Comment
 import com.zaki.sosmedapp.viewmodel.DetailPostViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

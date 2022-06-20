@@ -2,8 +2,6 @@ package com.zaki.sosmedapp
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.google.common.truth.Truth
-import com.zaki.sosmedapp.network.model.Address
-import com.zaki.sosmedapp.network.model.Company
 import com.zaki.sosmedapp.network.model.Post
 import com.zaki.sosmedapp.network.model.User
 import com.zaki.sosmedapp.network.repository.SosmedRepository

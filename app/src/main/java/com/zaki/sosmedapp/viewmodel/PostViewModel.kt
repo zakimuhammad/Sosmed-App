@@ -1,6 +1,9 @@
 package com.zaki.sosmedapp.viewmodel
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.zaki.sosmedapp.network.model.Post
 import com.zaki.sosmedapp.network.model.User
 import com.zaki.sosmedapp.network.repository.SosmedRepository

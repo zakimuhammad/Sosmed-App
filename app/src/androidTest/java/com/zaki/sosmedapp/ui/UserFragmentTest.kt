@@ -2,7 +2,6 @@ package com.zaki.sosmedapp.ui
 
 import android.os.Bundle
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.test.espresso.Espresso
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
