@@ -42,10 +42,24 @@ class FakeSosmedRepositoryImpl @Inject constructor(): SosmedRepository {
     }
 
     override suspend fun getAlbums(userId: Int): List<Album> {
-        TODO("Not yet implemented")
+        return listOf(
+            Album(
+                userId = 1,
+                id = 1,
+                title = "Album Sekolah"
+            )
+        )
     }
 
     override suspend fun getPhotos(albumId: Int): List<Photo> {
-        TODO("Not yet implemented")
+        return listOf(
+            Photo(
+                albumId = 1,
+                id = 1,
+                title = "Foto Sekolah",
+                url = "www.google.com",
+                thumbnailUrl = "www.google.com"
+            )
+        )
     }
 }
